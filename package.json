@@ -1,0 +1,14 @@
+{
+  "name": "2031681-e06a8b24a3683baa5413c730e91f9e822087fa04",
+  "version": "1.0.0",
+  "description": "",
+  "main": "chat-frontend.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "websocket": "^1.0.29"
+  }
+}
