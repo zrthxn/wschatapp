@@ -62,8 +62,8 @@ $(function () {
         } 
         else if (json.type === 'history') { // entire message history
             // insert every single message to the chat window
-            if(json.data[i].type==='message')
-                for (var i=0; i < json.data.length; i++) {
+            for (var i=0; i < json.data.length; i++) {
+                if(json.data[i].type==='message')
                     addMessage(json.data[i].author, json.data[i].text,
                             json.data[i].color, new Date(json.data[i].time));
                 }
