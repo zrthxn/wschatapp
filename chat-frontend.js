@@ -62,10 +62,11 @@ $(function () {
         } 
         else if (json.type === 'history') { // entire message history
             // insert every single message to the chat window
-            for (var i=0; i < json.data.length; i++) {
-                addMessage(json.data[i].author, json.data[i].text,
-                           json.data[i].color, new Date(json.data[i].time));
-            }
+            if(json.data[i].type==='message')
+                for (var i=0; i < json.data.length; i++) {
+                    addMessage(json.data[i].author, json.data[i].text,
+                            json.data[i].color, new Date(json.data[i].time));
+                }
         } 
         else if (json.type === 'message') { // it's a single message
             input.removeAttr('disabled'); // let the user write another message

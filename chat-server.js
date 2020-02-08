@@ -87,6 +87,7 @@ wsServer.on('request', function(request) {
 			// broadcast message to all connected clients
 			var json = JSON.stringify({ type:'typing', data: {
 				time: (new Date()).getTime(),
+				type: 'typing',
 				author: userName,
 				color: userColor
 			}});
@@ -99,6 +100,7 @@ wsServer.on('request', function(request) {
 			// broadcast message to all connected clients
 			var json = JSON.stringify({ type:'endtyping', data: {
 				time: (new Date()).getTime(),
+				type:'endtyping',
 				author: userName,
 				color: userColor
 			}});
@@ -112,6 +114,7 @@ wsServer.on('request', function(request) {
 				// we want to keep history of all sent messages
 				var obj = {
 					time: (new Date()).getTime(),
+					type:'message',
 					text: htmlEntities(message.utf8Data),
 					author: userName,
 					color: userColor
@@ -140,6 +143,7 @@ wsServer.on('request', function(request) {
 					// we want to keep history of all sent messages
 					var obj = {
 						time: (new Date()).getTime(),
+						type:'disconnect',
 						author: userName,
 						color: userColor
 					};
